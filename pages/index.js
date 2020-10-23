@@ -1,9 +1,7 @@
-import React from 'react';
-
 const Index = () => {
     return (
         <div>
-            <h1>Next page</h1>
+            <h1>Home page</h1>
         </div>
     );
 };
