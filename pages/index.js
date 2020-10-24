@@ -1,8 +1,23 @@
-const Index = () => {
-    return (
-        <div>
-            <h1>Home page</h1>
-        </div>
-    );
+import axios from "axios";
+import Link from "next/link";
+const Index = ({ posts }) => {
+  return (
+    <div>
+      <h1>Home page</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <Link href="/post">{post.title}</Link>
+            {post.title}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+Index.getInitialProps = async () => {
+  const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  const { data } = res;
+  return { posts: data };
 };
 export default Index;
