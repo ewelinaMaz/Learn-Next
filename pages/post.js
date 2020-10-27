@@ -3,12 +3,12 @@ import axios from "axios";
 
 const Post = ({ id, comments }) => {
   return (
-    <diV>
+    <div>
       <h1>You are looking at post {id}</h1>
       {comments.map((comment) => (
         <Comment {...comment} key={comment.id}/>
       ))}
-    </diV>
+    </div>
   );
 };
 const Comment = ({ email, body }) => (
